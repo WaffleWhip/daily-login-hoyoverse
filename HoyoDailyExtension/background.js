@@ -43,11 +43,11 @@ async function performCheckIn() {
   
   // Genshin Impact
   const gRes = await claimReward(cookies, API_ENDPOINTS.genshin);
-  results.push(`G: ${gRes}`);
+  results.push(`Genshin Impact: ${gRes}`);
 
   // Honkai: Star Rail
   const hRes = await claimReward(cookies, API_ENDPOINTS.starrail);
-  results.push(`H: ${hRes}`);
+  results.push(`Honkai: Star Rail: ${hRes}`);
 
   // 3. Update Status & Notify
   const finalStatus = results.join(" | ");
@@ -59,8 +59,9 @@ async function performCheckIn() {
   });
 
   // Notification Logic: Only notify on Success (New Claim) or Error. 
-  // Stay silent if "Already Claimed" to avoid spamming the user every hour.
-  if (finalStatus.includes("✅") || finalStatus.includes("❌")) {
+  // Stay silent if "Already Claimed" (just "✅") to avoid spamming the user every hour.
+  // We check for "✅ Success" explicitly to distinguish from the simple "✅".
+  if (finalStatus.includes("✅ Success") || finalStatus.includes("❌")) {
     chrome.notifications.create({
       type: 'basic',
       iconUrl: 'icon.png',
@@ -113,7 +114,7 @@ async function claimReward(cookies, gameConfig) {
     const data = await response.json();
     
     if (data.retcode === 0) return "✅ Success";
-    if (data.retcode === -5003) return "👌 Done"; // Already claimed
+    if (data.retcode === -5003) return "✅"; // Already claimed
     return `❌ Err(${data.retcode})`;
     
   } catch (error) {
