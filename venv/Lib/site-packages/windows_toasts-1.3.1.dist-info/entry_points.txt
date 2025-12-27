@@ -1,2 +1,0 @@
-[console_scripts]
-register_hkey_aumid = scripts.register_hkey_aumid:main

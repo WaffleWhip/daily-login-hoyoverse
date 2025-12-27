@@ -18,3 +18,9 @@ package-lock.json
 # Build artifacts
 dist/
 build/
+*.spec
+
+# Python
+venv/
+__pycache__/
+*.pyc
