@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { 
+      width: 280px; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      padding: 15px; 
+      background: #f8f9fa; 
+      color: #2d3436;
+    }
+    header {
+      border-bottom: 2px solid #6c5ce7;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    h3 { 
+      margin: 0; 
+      color: #2d3436; 
+      font-size: 16px; 
+      font-weight: 600;
+    }
+    .status-card { 
+      background: white; 
+      padding: 12px; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+      margin-bottom: 15px; 
+      border: 1px solid #dfe6e9;
+    }
+    .label { 
+      font-size: 11px; 
+      text-transform: uppercase; 
+      letter-spacing: 0.5px;
+      color: #636e72; 
+      margin-bottom: 4px; 
+    }
+    .value { 
+      font-size: 13px; 
+      font-weight: 600; 
+      color: #2d3436; 
+    }
+    button { 
+      width: 100%; 
+      padding: 10px; 
+      border: none; 
+      background: #6c5ce7; 
+      color: white; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-weight: 600; 
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+    button:hover { background: #5a4ad1; }
+    button:disabled { background: #b2bec3; cursor: not-allowed; }
+    
+    #msg {
+      text-align: center; 
+      font-size: 12px; 
+      color: #00b894; 
+      margin-top: 8px;
+      height: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h3>HoyoDaily Auto</h3>
+  </header>
+  
+  <div class="status-card">
+    <div class="label">Last Status</div>
+    <div class="value" id="status">Loading...</div>
+    
+    <div class="label" style="margin-top:10px">Last Check Time</div>
+    <div class="value" id="time">-</div>
+  </div>
+
+  <button id="btnCheck">Check In Now</button>
+  <div id="msg"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

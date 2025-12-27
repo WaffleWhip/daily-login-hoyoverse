@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "HoyoDaily Auto Check-in",
+  "version": "1.0.0",
+  "description": "Automated daily check-in for Genshin Impact and Honkai: Star Rail via Hoyolab.",
+  "permissions": [
+    "cookies",
+    "alarms",
+    "notifications",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.hoyolab.com/",
+    "https://*.mihoyo.com/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
