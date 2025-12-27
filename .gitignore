@@ -5,22 +5,10 @@ Desktop.ini
 
 # Logs
 *.log
-npm-debug.log*
 
 # Editor directories
 .vscode/
 .idea/
 
-# Node modules (if we ever add npm build step)
-node_modules/
-package-lock.json
-
-# Build artifacts
-dist/
-build/
-*.spec
-
-# Python
-venv/
-__pycache__/
-*.pyc
+# Local configuration
+config.json
